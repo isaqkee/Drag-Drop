@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            display: flex;
+            justify-content: center;
+        }
+        .box{
+            width: 100px;
+            height: 100px;
+            background-color: blueviolet;
+            color: white;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div id="box1" class="box" draggable="true">CAIXA 1</div>
+        <div id="box2" class="box" draggable="true">CAIXA 2</div>
+    </div>
+
+    <script>
+        const box1 = document.getElementById('box1')
+        const box2 = document.getElementById('box2')
+
+        box1.addEventListener('dragstart', function(event){
+            event.dataTransfer.setData('text/plain', 'box1')
+        })
+    </script>
+</body>
+</html>
